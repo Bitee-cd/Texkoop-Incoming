@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "aharoni";
-  src: url("/fonts/aharoni/ahronbd.ttf") format("truetype");
-  src: url("/fonts/aharoni/ahronbd.ttf") format("truetype");
+  font-family: "Helevtica";
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-BdEx.otf") format("truetype");
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-BlkEx.otf") format("truetype");
 }

@@ -24,8 +24,7 @@ html {
   font-size: clamp(1.875rem, 2vw + 2.4rem, 4.375rem);
 }
 .h1-text {
-  font-size: clamp(1.5rem, 3vw + 0.5rem, 4.375rem);
-  font-weight: 700;
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.875rem);
 }
 .h2-text {
   font-size: clamp(1.25rem, 1vw + 1rem, 2.25rem);
@@ -35,7 +34,7 @@ html {
   font-size: clamp(1rem, 1vw + 0.6rem, 1.563rem);
 }
 .p-text {
-  font-size: clamp(0.938rem, 1vw + 0.6rem, 1.25rem);
+  font-size: clamp(0.938rem, 0.1vw + 0.9rem, 1.25rem);
 }
 .h4-fixed {
   font-size: 18px;
@@ -46,4 +45,17 @@ html {
 .nav-text {
   font-size: clamp(0.75rem, 0.5vw + 0.5rem, 1.125rem);
   font-weight: 700;
+}
+.timer {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.71);
+}
+
+.html {
+  @apply font-Helevtica;
+}
+.button {
+  @apply border border-sec text-sec px-20 py-4 p-text hover:border-pri hover:text-pri transition-all duration-300;
+}
+.timer {
+  @apply bg-sec w-[70px] h-[50px] text-center;
 }

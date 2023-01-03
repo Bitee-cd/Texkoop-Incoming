@@ -9,12 +9,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        pri: "#1C2F50",
-        pri_7: "#021C47",
-        sec: "#FAA019",
+        pri: "#2F7DFF",
+        sec: "#DD8626",
       },
       fontFamily: {
-        Aharoni: ["aharoni", "san-serif"],
+        Helevtica: ["Helevtica", "san-serif"],
       },
       screens: {},
       animation: {

@@ -1,3 +1,9 @@
+import WhatIsComing from "../components/WhatIsComing";
+
 export default function Home() {
-  return <>this is it</>;
+  return (
+    <>
+      <WhatIsComing />
+    </>
+  );
 }
