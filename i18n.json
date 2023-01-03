@@ -1,0 +1,16 @@
+{
+  "locales": ["en-US", "fr"],
+  "defaultLocale": "en-US",
+  "pages": {
+    "*": ["common"],
+    "/": ["home"],
+    "/about": ["about"],
+    "/blog": ["blog"],
+    "/partner": ["partner"],
+    "/contact": ["contact", "partner"],
+    "/services": ["services", "home"],
+    "/FAQ": ["faq"],
+    "/privacy_policy": ["privacy"],
+    "/terms_&_conditions": ["terms"]
+  }
+}
