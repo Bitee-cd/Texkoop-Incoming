@@ -22,6 +22,14 @@ div {
   margin: 0;
 }
 html {
+  height: 100%;
+}
+
+body {
+  background-size: cover;
+  height: 100%;
+}
+html {
   scroll-behavior: smooth;
 }
 .big-text {
@@ -60,4 +68,51 @@ input::placeholder {
 }
 .input {
   @apply w-full p-3 h-[30px] lg:h-[50px]  outline-none border-pri_dark bg-transparent border;
+}
+/* animation*/
+.animate {
+  /* These properties specify the initial state of the bar */
+  height: 5px;
+  width: 100%;
+
+  /* These properties specify the animation */
+  animation: fill-bar 5s linear infinite;
+}
+
+/* This keyframe rule defines the animation */
+@keyframes fill-bar {
+  /* These values specify the start and end states of the animation */
+  0% {
+    width: 1%;
+  }
+  25% {
+    width: 100%;
+  }
+  40% {
+    width: 1%;
+    margin-right: 20px;
+  }
+  45% {
+    width: 1%;
+    margin-left: auto;
+  }
+  50% {
+    width: 1%;
+    margin-right: 0;
+    margin-left: auto;
+  }
+  75% {
+    width: 100%;
+  }
+  90% {
+    width: 1%;
+    margin-left: 20px;
+  }
+  95% {
+    width: 1%;
+    margin-right: auto;
+  }
+  100% {
+    width: 1%;
+  }
 }

@@ -15,7 +15,9 @@ const SocialIcons = () => {
         <FaTwitter />
         <FaFacebookF />
         <FaInstagram />
-        <FaLinkedinIn />
+        <a href="https://www.linkedin.com/company/texkoop/">
+          <FaLinkedinIn />
+        </a>
       </div>
     </div>
   );
