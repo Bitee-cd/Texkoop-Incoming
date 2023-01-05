@@ -7,13 +7,14 @@
   position: relative;
   display: flex;
   align-items: center;
+  height: 100vh;
 }
 .background::before {
   position: absolute;
   content: "";
   top: 0;
   right: 0;
-  background: rgba(44, 78, 134);
+  background: rgba(44, 78, 134, 0.7);
   width: 100%;
   height: 100%;
   z-index: -1;

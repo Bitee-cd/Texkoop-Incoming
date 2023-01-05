@@ -10,10 +10,13 @@ module.exports = {
     extend: {
       colors: {
         pri: "#2F7DFF",
+        pri_dark: "#2C4E86",
         sec: "#DD8626",
+        ter: "#D9D9D9",
       },
       fontFamily: {
-        Helevtica: ["Helevtica", "san-serif"],
+        Helvetica: ["Helvetica"],
+        Aharoni: ["Aharoni", "sans-serif"],
       },
       screens: {},
       animation: {

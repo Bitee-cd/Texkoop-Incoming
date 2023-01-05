@@ -4,16 +4,17 @@ import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import Language from "./Language";
 
+import SocialIcons from "./SocialIcons";
 const WhatIsComing = () => {
   const { t, lang } = useTranslation("home");
-  let date = new Date().getFullYear();
+
   return (
     <section className={`${styles.background} h-screen  `}>
       <div
         className={`${styles.text} text-white max-w-[1440px] w-[90%] mx-auto`}
       >
-        <div className=" grid md:grid-cols-2 gap-20">
-          <div>
+        <div className=" md:flex justify-between">
+          <div className="md:w-[45%]">
             <div className="flex gap-5 items-end mb-10">
               <>
                 <Image
@@ -30,11 +31,11 @@ const WhatIsComing = () => {
                 {t("Headi")}
                 <br></br> {t("Headii")}
               </p>
-              <p className="p-text my-7">{t("texta")}</p>
+              <p className="p-text my-7 font-light">{t("texta")}</p>
               <button className="button">{t("button")}</button>
             </div>
           </div>
-          <div className="flex items-end">
+          <div className="md:w-[45%] flex items-end mt-10 md:mt-0">
             <div className="grid grid-cols-4 justify-center gap-5 text-3xl font-black">
               <div className="timer">00</div>
               <div className="timer">00</div>
@@ -43,10 +44,8 @@ const WhatIsComing = () => {
             </div>
           </div>
         </div>
-        <div className="mt-20 text-white flex justify-between  ">
-          <div>
-            <p className="h1-text">Texkoop {date}</p>
-          </div>
+        <div className="mt-20 mb-10 text-white lg:flex justify-between hidden  ">
+          <SocialIcons />
           <div>
             <Language />
           </div>

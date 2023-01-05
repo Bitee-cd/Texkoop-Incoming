@@ -6,16 +6,17 @@ const Language = () => {
   return (
     <div className={``}>
       {locale ? (
-        <div>
+        <div className="flex gap-1">
           <img
             src="https://flagcdn.com/gb.svg"
             width="30"
             alt="UK English"
             className="cursor-pointer"
           />
+          EN
         </div>
       ) : (
-        <div>
+        <div className="flex gap-1">
           <img
             src="https://flagcdn.com/fr.svg"
             width="30"
@@ -23,6 +24,7 @@ const Language = () => {
             onMouseEnter={setLocale(true)}
             className="cursor-pointer"
           />
+          FR
         </div>
       )}
     </div>
