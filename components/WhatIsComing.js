@@ -92,9 +92,8 @@ const WhatIsComing = () => {
         </div>
         <div className="mt-20 mb-10 text-white lg:flex justify-between hidden  ">
           <SocialIcons />
-
           <div className="">
-            <Language />
+            <LanguageMobile />
           </div>
         </div>
       </div>
