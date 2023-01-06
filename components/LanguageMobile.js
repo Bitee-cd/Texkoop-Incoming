@@ -1,22 +1,19 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import styles from "./../styles/Home.module.css";
+import React, { useEffect, useState } from "react";
 
-const Language = () => {
-  const [locale, setLocale] = useState(false);
+const LanguageMobile = () => {
   const router = useRouter();
+  let lang = router.locale;
+  const [locale, setLocale] = useState(lang);
+  useEffect(() => {
+    setLocale(router.locale);
+  }, [router]);
+
   return (
     <div className="relative">
-      <motion.div
-        whileHover={{ y: -10 }}
-        transition={{ duration: 0.3 }}
-        className={`${styles.slideIn} cursor-pointer`}
-        onMouseOver={() => setLocale(!locale)}
-        onMouseOut={() => setLocale(locale)}
-      >
-        {locale ? (
+      <div>
+        {locale == "fr" && (
           <Link href={`${router.asPath}`} locale="en-US">
             <div className="flex gap-1">
               <img
@@ -28,7 +25,8 @@ const Language = () => {
               EN
             </div>
           </Link>
-        ) : (
+        )}
+        {locale == "en-US" && (
           <Link href={`${router.asPath}`} locale="fr">
             <div className="flex gap-1">
               <img
@@ -41,9 +39,9 @@ const Language = () => {
             </div>
           </Link>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 };
 
-export default Language;
+export default LanguageMobile;

@@ -12,3 +12,4 @@ export const one_super_app = {
     { id: 3, head: "Headbiii", text: "Textbiii" },
   ],
 };
+export const remaining_time = 32488;

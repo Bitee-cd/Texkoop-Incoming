@@ -3,31 +3,57 @@ import styles from "./../styles/Home.module.css";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import Language from "./Language";
-import { motion } from "framer-motion";
-
 import SocialIcons from "./SocialIcons";
 import CountDownTimer from "./CountDownTimer";
+import Timer from "./Timer";
+import LanguageMobile from "./LanguageMobile";
+
 const WhatIsComing = () => {
   const { t, lang } = useTranslation("home");
-  // ...
-
-  const [timeLeft, setTimeLeft] = useState(CountDownTimer());
+  const [timerDays, setTimerDays] = useState();
+  const [timerHours, setTimerHours] = useState();
+  const [timerMinutes, setTimerMinutes] = useState();
+  const [timerSeconds, setTimerSeconds] = useState();
+  const [diff, setDiff] = useState();
+  let interval;
+  const startTimer = () => {
+    const countDownDate = new Date("January 21,2023").getTime();
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = countDownDate - now;
+      setDiff(difference);
+      const days = Math.floor(difference / (24 * 60 * 60 * 1000));
+      const hours = Math.floor(
+        (difference % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((difference % (60 * 60 * 1000)) / (1000 * 60));
+      const seconds = Math.floor((difference % (60 * 1000)) / 1000);
+      if (difference < 0) {
+        clearInterval(interval.current);
+      } else {
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
+      }
+    });
+  };
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(CountDownTimer());
-    }, 1000);
-    return () => clearTimeout(timer);
+    startTimer();
   });
-
-  // ...
 
   return (
     <section className={`${styles.background} h-screen  `}>
+      <div className={`${styles.background_image}`}></div>
       <div
         className={`${styles.text} text-white max-w-[1440px] w-[90%] mx-auto`}
       >
         <div className=" md:flex justify-between">
           <div className="md:w-[40%]">
+            <div className="lg:hidden mb-20">
+              <Language />
+            </div>
+
             <div className="flex gap-5 items-end mb-10">
               <>
                 <Image
@@ -52,15 +78,16 @@ const WhatIsComing = () => {
           </div>
           <div className="md:w-[40%] flex flex-end items-end mt-10 md:mt-0">
             <div className=" justify-end text-3xl font-black">
-              {timeLeft ? (
-                <div className="grid grid-cols-4 gap-5">
-                  <div className="timer">{timeLeft.days}</div>
-                  <div className="timer">{timeLeft.hours}</div>
-                  <div className="timer">{timeLeft.minutes}</div>
-                  <div className="timer">{timeLeft.seconds}</div>
-                </div>
+              {/* <CountDownTimer /> */}
+              {diff > 0 ? (
+                <Timer
+                  timerDays={timerDays}
+                  timerHours={timerHours}
+                  timerMinutes={timerMinutes}
+                  timerSeconds={timerSeconds}
+                />
               ) : (
-                <span>Time's up!</span>
+                <p> We are Live</p>
               )}
             </div>
           </div>
@@ -68,7 +95,7 @@ const WhatIsComing = () => {
         <div className="mt-20 mb-10 text-white lg:flex justify-between hidden  ">
           <SocialIcons />
           <div>
-            <Language />
+            <LanguageMobile />
           </div>
         </div>
       </div>

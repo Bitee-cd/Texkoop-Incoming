@@ -46,7 +46,9 @@ const Form = () => {
             ))}
           </select>
         </div>
-        <button className="button">{t("button2")}</button>
+        <div>
+          <button className="button">{t("button2")}</button>
+        </div>
       </form>
     </div>
   );
