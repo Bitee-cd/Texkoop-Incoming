@@ -15,7 +15,7 @@ const LanguageMobile = () => {
       <div>
         {locale == "fr" && (
           <Link href={`${router.asPath}`} locale="en-US">
-            <div className="flex gap-1">
+            <div className="flex gap-1 font-light">
               <img
                 src="https://flagcdn.com/gb.svg"
                 width="30"
@@ -28,7 +28,7 @@ const LanguageMobile = () => {
         )}
         {locale == "en-US" && (
           <Link href={`${router.asPath}`} locale="fr">
-            <div className="flex gap-1">
+            <div className="flex gap-1 font-light">
               <img
                 src="https://flagcdn.com/fr.svg"
                 width="30"

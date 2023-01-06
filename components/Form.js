@@ -7,7 +7,7 @@ const Form = () => {
   const { select } = form;
   return (
     <div className="col-span-3">
-      <p className="p-text text-pri_dark capitalize font-medium">
+      <p className="p-text text-pri_dark capitalize font-semibold">
         {t("Headb")}
       </p>
       <p className="p-tiny-text text-black">{t("textb")}</p>

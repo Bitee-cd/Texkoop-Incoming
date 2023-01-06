@@ -1,10 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-UltLtEx.otf");
+  font-weight: extralight;
+  font-style: extralight;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-ThEx.otf");
+  font-weight: light;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-Ex.otf");
+  font-weight: medium;
+  font-style: medium;
+}
 @font-face {
   font-family: "Helvetica";
   src: url("/fonts/Helvetica/HelveticaNeueLTStd-MdEx.otf");
+  font-weight: semibold;
+  font-style: semibold;
 }
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-BdEx.otf");
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-LtEx.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica/HelveticaNeueLTStd-HvEx.otf");
+  font-weight: extrabold;
+  font-style: extrabold;
+} */
 /* * {
   box-sizing: border-box;
   font-family: "Helvetica";
@@ -32,9 +72,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
-.big-text {
-  font-size: clamp(1.875rem, 2vw + 2.4rem, 4.375rem);
-}
+
 .h1-text {
   font-size: clamp(1.25rem, 1vw + 1rem, 1.875rem);
 }
@@ -43,6 +81,11 @@ html {
 }
 .p-text {
   font-size: clamp(0.938rem, 0.1vw + 0.9rem, 1.25rem);
+  text-align: justify;
+}
+.h4-text {
+  font-size: clamp(0.938rem, 0.1vw + 0.9rem, 1.25rem);
+  text-align: justify;
 }
 
 .timer {
@@ -53,7 +96,7 @@ html {
   @apply font-Helvetica;
 }
 .button {
-  @apply border border-sec text-sec px-5 lg:px-20 py-2 lg:py-4 p-text hover:border-pri hover:text-pri transition-all duration-300;
+  @apply border border-sec text-sec px-5 lg:px-20 py-2 lg:py-4 p-text hover:border-pri hover:text-pri transition-all duration-300 font-normal;
 }
 .timer {
   @apply bg-sec w-[70px] h-[50px] text-center;
@@ -116,248 +159,51 @@ input::placeholder {
     width: 1%;
   }
 }
-
-/* Play with speed and easing of the animation */
-/* =========================================== */
-:root {
-  --: #16f;
+/*animation for timer*/
+.top,
+.bottom {
+  padding: 0 0.5em;
+  height: 50px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.71);
 }
-.digit {
-  display: inline-block;
-  font-size: 200px;
-  color: yellow;
-  height: 180px;
-  line-height: 1;
-}
-.time-part-wrapper {
-  display: flex;
+.flip_card {
   position: relative;
-}
-.time-part-wrapper:not(:last-child):after {
-  content: ":";
-  display: block;
-  width: 30px;
-  height: 230px;
-  position: absolute;
-  top: 0px;
-  right: -30px;
-  color: rgba(0, 0, 0, 0.25);
-  font-size: 20px;
-  line-height: 0.9;
-}
-.time-part {
-  width: 160px;
-  text-align: center;
-  height: 200px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 50px;
   overflow: hidden;
-  display: inline-block;
-  margin-left: -20px;
-  box-sizing: border-box;
+  @apply bg-sec;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.71);
 }
-.time-part .digit-wrapper {
-  animation-timing-function: cubic-bezier(1, 0, 1, 0);
-}
-.time-part.hours.tens .digit-wrapper {
-  animation-name: seconds-tens;
-  animation-duration: 216000s;
-  animation-iteration-count: 1;
-}
-.time-part.hours.ones .digit-wrapper {
-  animation-name: seconds-ones;
-  animation-duration: 36000s;
-  animation-iteration-count: 6;
-}
-.time-part.minutes.tens .digit-wrapper {
-  animation-name: minutes-tens;
-  animation-duration: 3600s;
-  animation-iteration-count: 60;
-}
-.time-part.minutes.ones .digit-wrapper {
-  animation-name: minutes-ones;
-  animation-duration: 600s;
-  animation-iteration-count: 360;
-}
-.time-part.seconds.tens .digit-wrapper {
-  animation-name: seconds-tens;
-  animation-duration: 60s;
-  animation-iteration-count: 3600;
-}
-.time-part.seconds.ones .digit-wrapper {
-  animation-name: seconds-ones;
-  animation-duration: 10s;
-  animation-iteration-count: 21800;
-}
-
-@keyframes minutes-tens {
-  0% {
-    transform: translateY(-180px);
-  }
-  16.6666666667% {
-    transform: translateY(-360px);
-  }
-  33.3333333333% {
-    transform: translateY(-540px);
-  }
-  50% {
-    transform: translateY(-720px);
-  }
-  66.6666666667% {
-    transform: translateY(-900px);
-  }
-  83.3333333333% {
-    transform: translateY(-1080px);
-  }
-}
-@keyframes minutes-ones {
-  0% {
-    transform: translateY(-180px);
-  }
-  10% {
-    transform: translateY(-360px);
-  }
-  20% {
-    transform: translateY(-540px);
-  }
-  30% {
-    transform: translateY(-720px);
-  }
-  40% {
-    transform: translateY(-900px);
-  }
-  50% {
-    transform: translateY(-1080px);
-  }
-  60% {
-    transform: translateY(-1260px);
-  }
-  70% {
-    transform: translateY(-1440px);
-  }
-  80% {
-    transform: translateY(-1620px);
-  }
-  90% {
-    transform: translateY(-1800px);
-  }
-}
-@keyframes seconds-tens {
-  0% {
-    transform: translateY(-180px);
-  }
-  16.6666666667% {
-    transform: translateY(-360px);
-  }
-  33.3333333333% {
-    transform: translateY(-540px);
-  }
-  50% {
-    transform: translateY(-720px);
-  }
-  66.6666666667% {
-    transform: translateY(-900px);
-  }
-  83.3333333333% {
-    transform: translateY(-1080px);
-  }
-}
-@keyframes seconds-ones {
-  0% {
-    transform: translateY(-180px);
-  }
-  10% {
-    transform: translateY(-360px);
-  }
-  20% {
-    transform: translateY(-540px);
-  }
-  30% {
-    transform: translateY(-720px);
-  }
-  40% {
-    transform: translateY(-900px);
-  }
-  50% {
-    transform: translateY(-1080px);
-  }
-  60% {
-    transform: translateY(-1260px);
-  }
-  70% {
-    transform: translateY(-1440px);
-  }
-  80% {
-    transform: translateY(-1620px);
-  }
-  90% {
-    transform: translateY(-1800px);
-  }
-}
-@keyframes hundredths-tens {
-  0% {
-    transform: translateY(-180px);
-  }
-  10% {
-    transform: translateY(-360px);
-  }
-  20% {
-    transform: translateY(-540px);
-  }
-  30% {
-    transform: translateY(-720px);
-  }
-  40% {
-    transform: translateY(-900px);
-  }
-  50% {
-    transform: translateY(-1080px);
-  }
-  60% {
-    transform: translateY(-1260px);
-  }
-  70% {
-    transform: translateY(-1440px);
-  }
-  80% {
-    transform: translateY(-1620px);
-  }
-  90% {
-    transform: translateY(-1800px);
-  }
-}
-@keyframes hundredths-ones {
-  0% {
-    transform: translateY(-180px);
-  }
-  10% {
-    transform: translateY(-360px);
-  }
-  20% {
-    transform: translateY(-540px);
-  }
-  30% {
-    transform: translateY(-720px);
-  }
-  40% {
-    transform: translateY(-900px);
-  }
-  50% {
-    transform: translateY(-1080px);
-  }
-  60% {
-    transform: translateY(-1260px);
-  }
-  70% {
-    transform: translateY(-1440px);
-  }
-  80% {
-    transform: translateY(-1620px);
-  }
-  90% {
-    transform: translateY(-1800px);
-  }
-}
-.wrapper {
-  margin: 100px auto;
+.flip_card.flip::before {
+  position: absolute;
+  content: "7";
+  height: 50px;
+  overflow: hidden;
+  padding: 0 0.5em;
   width: 100%;
-  position: relative;
+  text-align: center;
+  animation: slide-up 1000ms ease-in;
 }
+.flip_card.flip::after {
+  position: absolute;
+  content: "8";
+  color: red;
+  padding: 0 0.5em;
+  margin-top: 50px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.71);
+  animation: slide-up2 1000ms ease-in;
+}
+@keyframes slide-up {
+  100% {
+    transform: translateY(-50px);
+  }
+}
+@keyframes slide-up2 {
+  100% {
+    transform: translateY(-50px);
+  }
+}
+/*animation for timer*/

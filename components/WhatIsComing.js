@@ -5,6 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 import SocialIcons from "./SocialIcons";
 import Timer from "./Timer";
 import LanguageMobile from "./LanguageMobile";
+import Language from "./Language";
 
 const WhatIsComing = () => {
   const { t, lang } = useTranslation("home");
@@ -70,7 +71,7 @@ const WhatIsComing = () => {
                 {t("Headi")}
                 <br></br> {t("Headii")}
               </p>
-              <p className="p-text my-7 font-light">{t("texta")}</p>
+              <p className="p-text font-light my-7 ">{t("texta")}</p>
               <button className="button">{t("button")}</button>
             </div>
           </div>
@@ -92,8 +93,11 @@ const WhatIsComing = () => {
         </div>
         <div className="mt-20 mb-10 text-white lg:flex justify-between hidden  ">
           <SocialIcons />
-          <div>
+          <div className="lg:hidden">
             <LanguageMobile />
+          </div>
+          <div className="hidden lg:block">
+            <Language />
           </div>
         </div>
       </div>

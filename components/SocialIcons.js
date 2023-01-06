@@ -10,7 +10,7 @@ const SocialIcons = () => {
   let date = new Date().getFullYear();
   return (
     <div>
-      <p className="p-text">Texkoop {date}</p>
+      <p className="h4-text ">Texkoop {date}</p>
       <div className="flex items-center gap-5 mt-2">
         <a href="https://twitter.com/TEXKOOP" target="_blank">
           <FaTwitter />
