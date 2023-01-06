@@ -36,11 +36,13 @@ const Form = () => {
         </div>
         <div className="">
           <select
-            placeholder={t("Role")}
             required
             name="role"
             className=" w-full px-3 h-[30px] lg:h-[50px] text-color outline-none text- border-pri_dark bg-ter border"
           >
+            <option value="" disabled selected>
+              {t("Role")}
+            </option>
             {select.map((item) => (
               <option key={item.name}>{t(item.name)}</option>
             ))}
