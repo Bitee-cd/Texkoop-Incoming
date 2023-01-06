@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./../styles/Home.module.css";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
-import Language from "./Language";
 import SocialIcons from "./SocialIcons";
-import CountDownTimer from "./CountDownTimer";
 import Timer from "./Timer";
 import LanguageMobile from "./LanguageMobile";
 
@@ -51,7 +49,7 @@ const WhatIsComing = () => {
         <div className=" md:flex justify-between">
           <div className="md:w-[40%]">
             <div className="lg:hidden mb-20">
-              <Language />
+              <LanguageMobile />
             </div>
 
             <div className="flex gap-5 items-end mb-10">
