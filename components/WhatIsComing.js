@@ -5,7 +5,6 @@ import useTranslation from "next-translate/useTranslation";
 import SocialIcons from "./SocialIcons";
 import Timer from "./Timer";
 import LanguageMobile from "./LanguageMobile";
-import Language from "./Language";
 
 const WhatIsComing = () => {
   const { t, lang } = useTranslation("home");
@@ -93,10 +92,8 @@ const WhatIsComing = () => {
         </div>
         <div className="mt-20 mb-10 text-white lg:flex justify-between hidden  ">
           <SocialIcons />
-          <div className="lg:hidden">
-            <LanguageMobile />
-          </div>
-          <div className="hidden lg:block">
+
+          <div className="">
             <Language />
           </div>
         </div>
