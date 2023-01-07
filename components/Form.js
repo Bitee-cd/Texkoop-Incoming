@@ -77,7 +77,7 @@ const Form = () => {
               {t("Role")}
             </option>
             {select.map((item) => (
-              <option key={item.name}>{t(item.name)}</option>
+              <option key={item.name} value={t(item.name)}>{t(item.name)}</option>
             ))}
           </select>
         </div>
