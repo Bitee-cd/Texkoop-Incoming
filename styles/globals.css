@@ -132,7 +132,7 @@ html {
   @apply border border-sec text-sec px-5 lg:px-20 py-2 lg:py-4 p-text hover:border-pri hover:text-pri transition-all duration-300 font-medium;
 }
 .timer {
-  @apply bg-sec w-[70px] h-[50px] text-center;
+  @apply bg-sec w-[70px] h-[50px] flex items-center justify-center text-center;
 }
 input::placeholder {
   color: rgba(30, 30, 30, 0.57);
