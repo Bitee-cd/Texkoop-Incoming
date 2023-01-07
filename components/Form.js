@@ -42,15 +42,13 @@ const Form = () => {
   const { select } = form;
   return (
     <div className="col-span-3">
-      <p className="p-text text-pri_dark capitalize font-semibold">
-        {t("Headb")}
-      </p>
+      <p className="p-text text-pri_dark capitalize font-[600]">{t("Headb")}</p>
       <p className="p-tiny-text text-black">{t("textb")}</p>
       <form onSubmit={submitHandler}
         id="riderForm"
-        className=" grid gap-2 md:gap-5 my-5 md:my-10 p-tiny-text"
+        className=" grid gap-2 md:gap-5 my-5 md:my-10  p-tiny-text"
       >
-        <p className="p-tiny-text text-pri_dark">{t("FillIn")}</p>
+        <p className="p-tiny-text text-pri_dark font-medium">{t("FillIn")}</p>
         <div className="">
           <input
             required
@@ -71,11 +69,13 @@ const Form = () => {
         </div>
         <div className="">
           <select
-            placeholder={t("Role")}
             required
             name="role"
-            className=" w-full px-3 h-[30px] lg:h-[50px] text-color outline-none text- border-pri_dark bg-ter border"
+            className=" w-full px-3 h-[30px] lg:h-[50px] text-color outline-none  border-pri_dark bg-ter border"
           >
+            <option value="" disabled selected>
+              {t("Role")}
+            </option>
             {select.map((item) => (
               <option key={item.name}>{t(item.name)}</option>
             ))}

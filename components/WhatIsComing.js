@@ -47,20 +47,19 @@ const WhatIsComing = () => {
         className={`${styles.text} text-white max-w-[1440px] w-[90%] mx-auto`}
       >
         <div className=" md:flex justify-between">
-          <div className="md:w-[40%]">
+          <div className="md:w-[45%]">
             <div className="lg:hidden mb-20">
               <LanguageMobile />
             </div>
 
             <div className="flex gap-5 items-end mb-10">
-              <>
-                <Image
+              <div>
+                <img
                   src="/icons/Logo.svg"
-                  width={100}
-                  height={50}
                   alt="Texkoop Logo"
+                  className="w-full object-contain logo"
                 />
-              </>
+              </div>
               <div className="w-[100px]">
                 <div className="animate bg-sec"></div>
               </div>
@@ -71,7 +70,9 @@ const WhatIsComing = () => {
                 <br></br> {t("Headii")}
               </p>
               <p className="p-text font-light my-7 ">{t("texta")}</p>
-              <button className="button">{t("button")}</button>
+              <button className="button">
+                <a href="#riderForm">{t("button")}</a>
+              </button>
             </div>
           </div>
           <div className="md:w-[40%] flex flex-end items-end mt-10 md:mt-0">

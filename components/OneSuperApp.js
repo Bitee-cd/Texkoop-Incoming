@@ -39,11 +39,16 @@ const OneSuperApp = () => {
               ))}
             </div>
           </div>
-          <div className="text-pri_dark flex justify-between mt-10">
-            <div className="block lg:hidden">
+          <div className="text-pri_dark mt-10 lg:block hidden">
+            <ScrollButton />
+          </div>
+          <div className=" lg:hidden text-pri_dark grid grid-cols-2 mt-10">
+            <div className="">
               <SocialIcons />
             </div>
-            <ScrollButton />
+            <div className="ml-auto">
+              <ScrollButton />
+            </div>
           </div>
         </div>
       </div>

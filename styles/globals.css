@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: "Helvetica";
   src: url("/fonts/Helvetica/HelveticaNeueLTStd-UltLtEx.otf");
   font-weight: extralight;
@@ -38,17 +38,51 @@
   src: url("/fonts/Helvetica/HelveticaNeueLTStd-LtEx.otf");
   font-weight: normal;
   font-style: normal;
-}
+} */
 /* @font-face {
   font-family: "Helvetica";
   src: url("/fonts/Helvetica/HelveticaNeueLTStd-HvEx.otf");
   font-weight: extrabold;
   font-style: extrabold;
 } */
-/* * {
+
+@layer base {
+  @font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica/HelveticaNeueLTStd-LtEx.otf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica/HelveticaNeueLTStd-HvEx.otf");
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica/HelveticaNeueLTStd-ThEx.otf");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica/HelveticaNeueLTStd-MdEx.otf");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica/HelveticaNeueLTStd-Ex.otf");
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+* {
   box-sizing: border-box;
-  font-family: "Helvetica";
-} */
+  /* font-family: HelveticaNeue; */
+}
 html,
 body,
 p,
@@ -78,6 +112,7 @@ html {
 }
 .p-tiny-text {
   font-size: clamp(0.625rem, 0.5vw + 0.5rem, 1.25rem);
+  text-align: justify;
 }
 .p-text {
   font-size: clamp(0.938rem, 0.1vw + 0.9rem, 1.25rem);
@@ -92,14 +127,11 @@ html {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.71);
 }
 
-* {
-  @apply font-Helvetica;
-}
 .button {
-  @apply border border-sec text-sec px-5 lg:px-20 py-2 lg:py-4 p-text hover:border-pri hover:text-pri transition-all duration-300 font-normal;
+  @apply border border-sec text-sec px-5 lg:px-20 py-2 lg:py-4 p-text hover:border-pri hover:text-pri transition-all duration-300 font-medium;
 }
 .timer {
-  @apply bg-sec w-[70px] h-[50px] text-center;
+  @apply bg-sec w-[70px] h-[50px] flex items-center justify-center text-center;
 }
 input::placeholder {
   color: rgba(30, 30, 30, 0.57);
@@ -110,7 +142,19 @@ input::placeholder {
   font-weight: 300;
 }
 .input {
-  @apply w-full p-3 h-[30px] lg:h-[50px]  outline-none border-pri_dark bg-transparent border;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -khtml-border-radius: 0;
+}
+select {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -khtml-border-radius: 0;
+}
+.input {
+  @apply w-full p-3 h-[30px] lg:h-[50px]  rounded-none outline-none border-pri_dark bg-transparent border;
 }
 /* animation*/
 .animate {
@@ -207,3 +251,10 @@ input::placeholder {
   }
 }
 /*animation for timer*/
+
+@media (max-width: 490px) {
+  .logo {
+    width: 220px !important;
+    height: auto !important;
+  }
+}
