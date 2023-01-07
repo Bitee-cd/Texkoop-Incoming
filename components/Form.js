@@ -20,9 +20,7 @@ const Form = () => {
 
     if (waitlist.status === 201) {
       setSuccess(true);
-      alert("You have been added to our waitlist");
     } else setError(true);
-    alert("Something went wrong");
   };
 };
 
@@ -94,7 +92,7 @@ return (
         )}
         {error && (
           <p className="text-red-600 p-tiny-text font-[500]">
-            Something went wrong{" "}
+            Something went wrong
           </p>
         )}
       </div>
