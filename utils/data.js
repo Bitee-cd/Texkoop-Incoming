@@ -13,3 +13,4 @@ export const one_super_app = {
   ],
 };
 export const remaining_time = 32488;
+export const API_URL = "http://localhost:8000"
