@@ -254,7 +254,14 @@ select {
 
 @media (max-width: 490px) {
   .logo {
-    width: 220px !important;
-    height: auto !important;
+    max-width: 100px !important;
+  }
+  .animate {
+    /* These properties specify the initial state of the bar */
+    height: 5px;
+    width: 100%;
+
+    /* These properties specify the animation */
+    animation: fill-bar 8s linear infinite;
   }
 }
