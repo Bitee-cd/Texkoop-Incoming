@@ -76,7 +76,9 @@ const WhatIsComing = () => {
                 {t("Headi")}
                 <br></br> {t("Headii")}
               </p>
-              <p className="p-text font-light my-7 ">{t("texta")}</p>
+              <p className="p-text font-light tracking-wider my-7 w-[90%]">
+                {t("texta")}
+              </p>
               <button className="button">
                 <a href="#riderForm">{t("button")}</a>
               </button>
