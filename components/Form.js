@@ -73,7 +73,7 @@ const Form = () => {
             name="role"
             className=" w-full px-3 h-[30px] lg:h-[50px] text-color outline-none  border-pri_dark bg-ter border"
           >
-            <option value="" disabled selected>
+            <option disabled defaultValue={t("Role")}>
               {t("Role")}
             </option>
             {select.map((item) => (
