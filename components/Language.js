@@ -21,7 +21,6 @@ const Language = () => {
             <div className="flex gap-1">
               <img
                 src="https://flagcdn.com/gb.svg"
-                width="30"
                 alt="English"
                 className="cursor-pointer"
               />
@@ -33,7 +32,6 @@ const Language = () => {
             <div className="flex gap-1">
               <img
                 src="https://flagcdn.com/fr.svg"
-                width="30"
                 alt="French"
                 className="cursor-pointer"
               />
