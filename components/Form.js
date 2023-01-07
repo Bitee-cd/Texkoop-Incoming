@@ -3,13 +3,48 @@ import React from "react";
 import { form } from "../utils/data";
 
 const Form = () => {
+
+  
+
+    
+  const createWaitlist = async (form_values) => {
+    const waitlist = await fetch(`/api/forms/waitlist/`, {
+      method: "POST",
+
+      headers: {
+        Accept: "application/json",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(form_values),
+    });
+    //it returns status of 201 if it was successfull and 400 if not successfull
+    console.log("response status", waitlist.status);
+    if (waitlist.status === 201) {
+      alert("You have been added to our waitlist")
+    }
+    else{
+      alert("Something went wrong")
+    }
+  };
+
+  
+  
+  const submitHandler = (e) => {
+    e.preventDefault();
+    var formData = new FormData(e.target);
+
+    const form_values = Object.fromEntries(formData);
+    console.log(form_values);
+    createWaitlist(form_values);
+  };
+  
   const { t, lang } = useTranslation("home");
   const { select } = form;
   return (
     <div className="col-span-3">
       <p className="p-text text-pri_dark capitalize font-[600]">{t("Headb")}</p>
       <p className="p-tiny-text text-black">{t("textb")}</p>
-      <form
+      <form onSubmit={submitHandler}
         id="riderForm"
         className=" grid gap-2 md:gap-5 my-5 md:my-10  p-tiny-text"
       >
@@ -19,7 +54,7 @@ const Form = () => {
             required
             type="text"
             placeholder={t("FirstName")}
-            name="first_name"
+            name="name"
             className="input"
           />
         </div>
@@ -47,7 +82,7 @@ const Form = () => {
           </select>
         </div>
         <div>
-          <button className="button">{t("button2")}</button>
+          <button type={'submit'} className="button">{t("button2")}</button>
         </div>
       </form>
     </div>
