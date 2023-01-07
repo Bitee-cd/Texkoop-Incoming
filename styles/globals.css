@@ -102,6 +102,9 @@ html {
 body {
   background-size: cover;
   height: 100%;
+  -webkit-perspective: 0px !important;
+  -webkit-backface-visibility: visible !important;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 html {
   scroll-behavior: smooth;
@@ -112,11 +115,11 @@ html {
 }
 .p-tiny-text {
   font-size: clamp(0.625rem, 0.5vw + 0.5rem, 1.25rem);
-  text-align: justify;
+  /* text-align: justify; */
 }
 .p-text {
-  /* font-size: clamp(1rem, 0.1vw + 0.9rem, 1.5rem); */
-  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.875rem);
+  font-size: clamp(1rem, 0.1vw + 0.9rem, 1.5rem);
+  /* font-size: clamp(1rem, 0.4vw + 0.9rem, 1.875rem); */
   text-align: justify;
 }
 .h4-text {
@@ -254,9 +257,9 @@ select {
 }
 /*animation for timer*/
 @media (min-width: 768px) {
-  .p-text {
+  /* .p-text {
     letter-spacing: 0.1rem;
-  }
+  } */
 }
 @media (max-width: 490px) {
   .logo {
