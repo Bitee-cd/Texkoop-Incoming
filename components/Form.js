@@ -18,7 +18,7 @@ const Form = () => {
       body: JSON.stringify(form_values),
     });
     //it returns status of 201 if it was successfull and 400 if not successfull
-    console.log("response status", waitlist.status);
+   
     if (waitlist.status === 201) {
       alert("You have been added to our waitlist")
     }
@@ -34,7 +34,7 @@ const Form = () => {
     var formData = new FormData(e.target);
 
     const form_values = Object.fromEntries(formData);
-    console.log(form_values);
+    
     createWaitlist(form_values);
   };
   
