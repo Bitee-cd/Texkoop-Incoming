@@ -57,7 +57,7 @@ const WhatIsComing = () => {
                 <img
                   src="/icons/Logo.svg"
                   alt="Texkoop Logo"
-                  className="w-full object-contain"
+                  className="w-full object-contain logo"
                 />
               </div>
               <div className="w-[100px]">
