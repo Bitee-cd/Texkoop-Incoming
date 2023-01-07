@@ -254,7 +254,7 @@ select {
 
 @media (max-width: 490px) {
   .logo {
-    width: 220px !important;
+    max-width: 100% !important;
     height: auto !important;
   }
 }
