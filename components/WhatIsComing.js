@@ -71,7 +71,9 @@ const WhatIsComing = () => {
                 <br></br> {t("Headii")}
               </p>
               <p className="p-text font-light my-7 ">{t("texta")}</p>
-              <button className="button">{t("button")}</button>
+              <button className="button">
+                <a href="#riderForm">{t("button")}</a>
+              </button>
             </div>
           </div>
           <div className="md:w-[40%] flex flex-end items-end mt-10 md:mt-0">
