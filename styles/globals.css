@@ -133,7 +133,7 @@ html {
 }
 
 .button {
-  @apply border border-sec text-sec px-5 lg:px-20 py-2 lg:py-4 p-text hover:border-pri hover:text-pri transition-all duration-300 font-medium;
+  @apply border border-sec text-sec px-5 lg:px-20 py-2 lg:py-4 p-text hover:border-pri active:border-pri hover:text-pri active:text-pri transition-all duration-300 font-medium;
 }
 .timer {
   @apply bg-sec w-[70px] h-[50px] flex items-center justify-center text-center;

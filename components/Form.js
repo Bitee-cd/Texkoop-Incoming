@@ -86,13 +86,11 @@ const Form = () => {
         <div>
           {success && (
             <p className="text-pri_dark p-tiny-text font-[500]">
-              You have been added to our waitlist
+              {t("success")}
             </p>
           )}
           {error && (
-            <p className="text-red-600 p-tiny-text font-[500]">
-              Something went wrong
-            </p>
+            <p className="text-red-600 p-tiny-text font-[500]">{t("error")}</p>
           )}
         </div>
       </form>
