@@ -65,12 +65,11 @@ const Form = () => {
         <div className="">
           <select
             required
+            defaultValue={t("Role")}
             name="role"
             className=" w-full px-3 h-[30px] lg:h-[50px] text-color outline-none  border-pri_dark bg-ter border"
           >
-            <option disabled defaultValue={t("Role")}>
-              {t("Role")}
-            </option>
+            <option disabled>{t("Role")}</option>
             {select.map((item) => (
               <option key={item.name} value={t(item.name)}>
                 {t(item.name)}
