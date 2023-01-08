@@ -5,6 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 import SocialIcons from "./SocialIcons";
 import Timer from "./Timer";
 import LanguageMobile from "./LanguageMobile";
+import Logo from "./Logo";
 
 const WhatIsComing = () => {
   const { t, lang } = useTranslation("home");
@@ -53,6 +54,7 @@ const WhatIsComing = () => {
             </div>
 
             <div className="flex gap-5 items-end mb-10">
+              <Logo />
               <div className="">
                 <img
                   src="/icons/Logo.png"

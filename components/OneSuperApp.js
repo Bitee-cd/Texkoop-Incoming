@@ -4,6 +4,7 @@ import { one_super_app } from "../utils/data";
 import useTranslation from "next-translate/useTranslation";
 import SocialIcons from "./SocialIcons";
 import ScrollButton from "./ScrollButton";
+import Logo from "./Logo";
 
 const OneSuperApp = () => {
   const { t, lang } = useTranslation("home");
@@ -49,6 +50,7 @@ const OneSuperApp = () => {
             <div className="ml-auto">
               <ScrollButton />
             </div>
+            <Logo />
           </div>
         </div>
       </div>
