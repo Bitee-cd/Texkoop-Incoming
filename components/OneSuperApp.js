@@ -50,7 +50,6 @@ const OneSuperApp = () => {
             <div className="ml-auto">
               <ScrollButton />
             </div>
-            <Logo />
           </div>
         </div>
       </div>
