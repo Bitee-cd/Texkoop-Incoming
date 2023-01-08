@@ -55,9 +55,9 @@ const WhatIsComing = () => {
             <div className="flex gap-5 items-end mb-10">
               <div className="">
                 <img
-                  src="/icons/Logo.svg"
+                  src="/icons/Logo.png"
                   alt="Texkoop Logo"
-                  className="w-full object-contain "
+                  className="w-[100px] object-contain "
                 />
               </div>
               <div className="w-[100px]">
